@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply scroll-smooth;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl;
+  }
+  h2 {
+    @apply text-3xl sm:text-4xl;
+  }
+  li {
+    @apply cursor-pointer;
+  }
+  button {
+    @apply shadow-lg rounded-full uppercase bg-indigo-600 hover:bg-indigo-500 py-2 px-6 text-white cursor-pointer hover:shadow-sm duration-200;
+  }
+}
+
+@layer components {
+  .c-link {
+    @apply ml-10 text-sm uppercase font-semibold text-black  hover:text-sky-600 dark:text-gray-200 dark:hover:text-sky-300;
+  }
+  .c-button {
+    @apply cursor-pointer rounded-full text-gray-600 shadow-lg p-3 border border-gray-200/50 dark:text-sky-200 hover:shadow-none duration-300 hover:scale-105 hover:text-sky-500 dark:hover:text-sky-500;
+  }
+  .wrapper {
+    @apply container max-w-[1368px] mx-auto px-2 2xl:px-6;
+  }
+  .gradient {
+    @apply bg-gradient-to-r from-blue-700 to-emerald-600;
+  }
+  .title {
+    @apply text-2xl font-light pb-3;
+  }
+}
