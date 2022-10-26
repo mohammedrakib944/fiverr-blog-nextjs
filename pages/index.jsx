@@ -2,9 +2,13 @@ import Head from "next/head";
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import Image from "next/image";
+import Img from "../assets/img/image2.png";
 
 // dummy data
 import { FEATURED_STORIES } from "../assets/data/Database";
+import Card2 from "../components/Card2";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -43,8 +47,75 @@ export default function Home() {
               <Card key={index} data={data} />
             ))}
           </div>
+          <br />
+          <br />
+          <div>
+            <h3 className="title border-b">SPOTLIGHT</h3>
+            <div className="py-6 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-y-6">
+              <Image
+                className="w-[180px] xl:w-[300px] hover:opacity-75 cursor-pointer rounded-lg"
+                src={Img}
+                alt=""
+              />
+              <Image
+                className="w-[180px] xl:w-[300px] hover:opacity-75 cursor-pointer rounded-lg"
+                src={Img}
+                alt=""
+              />
+              <Image
+                className="w-[180px] xl:w-[300px] hover:opacity-75 cursor-pointer rounded-lg"
+                src={Img}
+                alt=""
+              />
+              <Image
+                className="w-[180px] xl:w-[300px] hover:opacity-75 cursor-pointer rounded-lg"
+                src={Img}
+                alt=""
+              />
+            </div>
+          </div>
+          <br />
+          <br />
+          <div>
+            <h3 className="title border-b">IN CONVERSATION</h3>
+            <div>
+              {FEATURED_STORIES.map((data, index) => (
+                <Card2 key={index} data={data} />
+              ))}
+            </div>
+          </div>
+
+          <br />
+          <br />
+
+          <h3 className="title border-b">THROUGH MY EYES</h3>
+          <div className="py-4 mt-2 grid xl:grid-cols-2 gap-6">
+            {FEATURED_STORIES.map((data, index) => (
+              <Card key={index} data={data} />
+            ))}
+          </div>
+          <br />
+          <br />
+          <h3 className="title border-b">PAST HEADLINES</h3>
+          <div className="py-4 mt-2 grid xl:grid-cols-2 gap-6">
+            {FEATURED_STORIES.map((data, index) => (
+              <Card key={index} data={data} />
+            ))}
+          </div>
+          <br />
+          <br />
+          <div>
+            <h3 className="title border-b">MEDICAL MYTHS</h3>
+            <div>
+              {FEATURED_STORIES.map((data, index) => (
+                <Card2 key={index} data={data} />
+              ))}
+            </div>
+          </div>
         </div>
       </main>
+      <div className="h-[100px]"></div>
+      <Footer />
     </div>
   );
 }
